@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://kit.fontawesome.com/b5b3392b53.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<audio id="loading" src="music/music.mp3" autoplay="true" hidden="true" loop="true"></audio>
+<div class="crossfade">
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+  <figure></figure>
+</div>
+<div class="header">
+<div class="inner-header flex">
+<img src="https://media.discordapp.net/attachments/862386482294423552/921168342885220412/550x550.png?width=268&height=268">
+</div>
+<div>
+<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+<defs>
+<path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+</defs>
+<g class="parallax">
+<use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(0,0,0,0.7" />
+<use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(0,0,0,0.5)" />
+<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(0,0,0,0.3)" />
+<use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+</g>
+</svg>
+</div>
+</div>
+<div class="content flex">
+ <p><i class="fab fa-discord" id="icon"></i><span class="text"> discord.gg/marseloshop</span></p>
+ <div class="space"></div>
+ <p><i class="fas fa-globe" id="icon"></i><span class="text"> V3 BETA</span></p>
+</div>
+<script>
+  var play = false;
+          var vid = document.getElementById("loading");
+          vid.volume = 0.1;
+          window.addEventListener('keyup', function(e)
+          {
+              if (e.which == 69){
+                  vid.volume = Math.min(vid.volume + 0.1,1);
+              } else if(e.which == 65){
+                  vid.volume = Math.max(vid.volume - 0.1,0);
+              };
+          });
+  
+          var audio = document.querySelector('audio');
+  
+          if (audio) {
+  
+          window.addEventListener('keydown', function (event) {
+  
+          var key = event.which || event.keyCode;
+  
+          if (key === 32) { // spacebar
+  
+          event.preventDefault();
+  
+          audio.paused ? audio.play() : audio.pause();
+        
+      }
+  
+    });
+  }
+  </script>
+</body>
+</html>
